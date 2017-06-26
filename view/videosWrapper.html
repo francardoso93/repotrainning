@@ -1,0 +1,27 @@
+﻿
+
+
+<div class="videosWrapper">
+    <div  class="row" ng-if="filtered.length == 0">
+        <p id="notFoundVideoMessage">Não encontramos nenhum resultado para a sua busca =( </p>
+    </div>
+
+    <!-- TODO: This videosWrapper goes to a partial for reusing in the highlights screen -->
+    <div class="row">
+        <div class="col-sm-4">
+            <div ng-repeat="videoItem in getColumn(0,videosList)  | filter:search as filtered" class="listItem">
+                <div ng-include="'view/videoListColumn.html'"></div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div ng-repeat="videoItem in getColumn(1,videosList)  | filter:search" class="listItem">
+                <div ng-include="'view/videoListColumn.html'"></div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div ng-repeat="videoItem in getColumn(2,videosList)  | filter:search" class="listItem">
+                <div ng-include="'view/videoListColumn.html'"></div>
+            </div>
+        </div>
+    </div>
+</div>

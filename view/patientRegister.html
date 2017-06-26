@@ -1,0 +1,109 @@
+<section style="margin-top: 5%">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-lg-offset-2 col-lg-6">
+
+                <div>
+
+
+                    <!--<div class="sectionTitle">Quero uma Prótese</div>-->
+                    <br>
+                    <br/>
+                    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeg4WNd99w0HyaPhsNMPvDhvRjkubTQ1UlRLoQ8mHIDeejhBw/viewform?embedded=true" width="760" height="1650" frameborder="0" marginheight="0" marginwidth="0">A carregar...</iframe> 
+
+                    <!--<form id="patientForm" action="#/obrigado" class="form-horizontal">
+                        <div class="form-group">
+                            <label class="control-label col-sm-4" for="fullname">Nome Completo:</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" name="fullName" id="fullName" placeholder="Nome Completo" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-4" for="email">E-mail:</label>
+                            <div class="col-sm-8">
+                                <input type="email" class="form-control" name="email" id="email" placeholder="E-mail" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-4" for="age">Idade:</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" name="age" id="age" placeholder="Idade" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-4" for="phone">Telefone:</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" name="phone" id="phone" placeholder="Telefone" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-4" for="address">Endereço:</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" name="address" id="address" placeholder="Endereço" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-4" for="hasDoctor">Já possui algum médico/terapeuta?</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" name="hasDoctor" id="hasDoctor" placeholder="Já possui algum médico/terapeuta?" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-sm-offset-4 col-sm-8">
+                                <button type="submit" class="btn btn-success confirmButton" id="register">Solicitar</button>
+                            </div>
+                        </div>
+                    </form>-->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    function getFormObj(formId) {
+        var formObj = {};
+        var inputs = $('#' + formId).serializeArray();
+        $.each(inputs, function (i, input) {
+            formObj[input.name] = input.value;
+        });
+        return formObj;
+    }
+
+    $(document).ready(function () {
+        //your code here
+
+        var url = '/api/CompanyAPI';
+
+
+        $("#register").click(function () {
+            var formData = getFormObj("patientForm");
+            console.log(formData);
+
+            // $.post(url, formData, function (response) {
+            //     console.log(response);
+            //     // callback success
+            // }, function (response) {
+            //     console.log("500 - Something went wrong with the API");
+            //     // callback error
+            // });
+
+
+            // $.get(url, function (response) {
+            //     console.log(response);
+            //     // callback success
+            // }, function (response) {
+            //     // callback error
+            // });
+        }
+
+            //$.post(url, { name: 'Darlan', lastname: 'Mendonça' }, function (response) {
+            //    // callback success
+            //}, function (response) {
+            //    // callback error
+        );
+    });
+
+</script>

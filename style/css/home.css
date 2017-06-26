@@ -1,0 +1,80 @@
+﻿.sectionTitle {
+    color: #48C3EE;
+    font-size: 30px;
+}
+
+.videoTitle {
+    color: #48C3EE;
+    font-size: 18px;
+}
+
+.videosWrapper {
+    margin-top: 75px;
+}
+
+#descricaoHome {
+    margin-top: 750px;
+}
+
+.video {
+    width:100%; /*Needs to be the same size as video itself */
+}
+
+.listItem{
+    margin: 10px;
+}
+
+.borderLightGray {
+    border: solid 1px;
+    border-color: lightgray;
+}
+
+.banner {   
+    /*background-repeat:no-repeat;
+    background-size:contain;
+    background-position:center;*/
+    /*display: table;
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    height: 700px;*/
+    height: 700px;
+    position: absolute;   
+    top: 40px;
+    width: 100%;
+    
+}
+
+.banner img {   
+    /*background-repeat:no-repeat;
+    background-size:contain;
+    background-position:center;*/
+    /*display: table;
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    height: 700px;*/
+
+    max-width: 100%;
+    max-height: 100%;
+}
+
+#thumbnailList{
+    height:600px;
+    overflow-y:auto;
+    overflow-x:hidden;
+}
+
+#loadMoreVideosBtn{
+    margin-left:20%;
+    margin-right:20%;
+}
+
+.previewVideosListItem {
+    width:100%;
+}
+
+a{
+    cursor: pointer;
+}

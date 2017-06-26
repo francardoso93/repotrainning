@@ -1,0 +1,40 @@
+
+<div class="home-page" ng-controller="homeController">
+    <div class="container">
+        <section>
+            <div class="videosWrapper">
+                <div class="row">
+                    <div class="col-sm-8" id='highlightedVideo'>
+                        <div class="sectionTitle">Video em Destaque</div>
+                        <br />
+                        <div ng-include="'view/videoPlayer.html'"></div>
+                    </div>
+                    <div class="col-sm-4" id='listMoreVideos'>
+                        <!-- Replace this for a NG-REPEAT -->
+                        <div class="sectionTitle">+ Videos</div>
+                        <br />
+                        <div class="borderLightGray" id="thumbnailList">
+                            <div ng-repeat="videoItem in videosList|limitTo:amountOfVideos" class="listItem">
+                                <div class="row">
+                                    <div class="col-sm-5">
+                                        <a ng-click="selectVideo(videoItem)">
+                                            <img class="previewVideosListItem" ng-src="{{videoItem.snippet.thumbnails.medium.url}}" />
+                                        </a>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <a ng-click="selectVideo(videoItem)">
+                                            <p class="previewVideosListItem videoTitle">{{videoItem.snippet.title}}</p>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="button" ng-if="amountOfVideos<videosList.length" ng-click="loadMoreVideosClick()" class="btn btn-secondary" id="loadMoreVideosBtn">CARREGAR MAIS VIDEOS...</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--TODO: Incluir esse viewer em uma partial, e ver se consigo instanciar l� da INDEX para ficar vis�vel a todas as pages-->
+    </div>
+</div>
+

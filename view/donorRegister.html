@@ -1,0 +1,132 @@
+<section style="margin-top: 5%">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-lg-offset-2 col-lg-6">
+
+                <div>
+                    <!--<div class="sectionTitle">Quero Ajudar</div>-->
+                    <br>
+                    <br/>
+                    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfTcIthhFJvlXkHfsNwL1S1Gxle0S3ecTZh_nMW3gf-Xe3uUA/viewform?embedded=true" width="760" height="1650" frameborder="0" marginheight="0" marginwidth="0">A carregar...</iframe>
+                    <br/>
+                    
+                    <!--<form id="donorForm" action="#/obrigado" class="form-horizontal">
+                        <div class="form-group">
+                            <label class="control-label col-sm-4" for="fullname">Nome Completo:</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" name="fullName" id="fullName" placeholder="Nome Completo" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-4" for="email">E-mail:</label>
+                            <div class="col-sm-8">
+                                <input type="email" class="form-control" name="email" id="email" placeholder="E-mail" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-4" for="age">Idade:</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" name="age" id="age" placeholder="Idade" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-4" for="phone">Telefone:</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" name="phone" id="phone" placeholder="Telefone" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-4" for="address">Endereço:</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" name="address" id="address" placeholder="Endereço" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-4">Como deseja ajudar? </label>
+                            <div class="col-sm-8">
+                                <input name="helpMode" class="fixedOption" value="Doando Filamento PLA" type="radio" /> Doando
+                                Filamento PLA <br>
+                                <input name="helpMode" class="fixedOption" value="Impressão 3D de prótese" type="radio" />                                Impressão 3D de prótese <br>
+                                <input name="helpMode" class="otherOption" type="radio" value="Outros" /> Outros <br>
+                                <input type="text" name="helpMode" class="form-control" id="helpModeOthers" placeholder="Outros" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-sm-offset-4 col-sm-8">
+                                <button type="submit" class="btn btn-success confirmButton" id="register">Doar</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>-->
+
+<script>
+    function getFormObj(formId) {
+        var formObj = {};
+        var inputs = $('#' + formId).serializeArray();
+        $.each(inputs, function (i, input) {
+            formObj[input.name] = input.value;
+        });
+        return formObj;
+    }
+
+    $(document).ready(function () {
+        //your code here
+
+        var url = '/api/CompanyAPI';
+
+        $("#register").click(function () {
+            //TODO: BUGFIX quando seleciono uma opção FIXED não está indo para a page de obrigado!
+
+            var formData = getFormObj("donorForm");
+
+            // if ($("helpModeOthers").val() != "") {
+            //     console.log("if");
+            //     formData.helpMode = $("helpModeOthers").val();
+            // }
+            // else {
+            //     console.log("else");
+            //     formData.helpMode = $("helpModeOthers").val();
+            // }
+
+            if ($('input[name=helpMode]:checked', '#donorForm').val() == "Outros") {
+                formData.helpMode = $("#helpModeOthers").val();
+            }
+            else {
+                formData.helpMode = $('input[name=helpMode]:checked', '#donorForm').val();
+            }
+
+            console.log(formData);
+
+            // $.post(url, formData, function (response) {
+            //     console.log(response);
+            //     // callback success
+            // }, function (response) {
+            //     console.log("500 - Something went wrong with the API");
+            //     // callback error
+            // });
+
+
+            // $.get(url, function (response) {
+            //     console.log(response);
+            //     // callback success
+            // }, function (response) {
+            //     // callback error
+            // });
+        });
+
+        $(".otherOption").click(function () {
+            $("#helpModeOthers").show();
+        });
+
+        $(".fixedOption").click(function () {
+            $("#helpModeOthers").hide();
+        });
+    });
+
+</script>

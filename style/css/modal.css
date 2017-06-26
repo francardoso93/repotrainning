@@ -1,0 +1,12 @@
+﻿.modal{
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);  
+}
+
+.modal-content {
+    padding: 15px;
+    float: none;
+    margin: 1% auto;
+    max-height: 700px; /* FRANCISCO */
+    overflow: auto;
+}   

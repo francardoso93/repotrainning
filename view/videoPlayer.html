@@ -1,0 +1,12 @@
+﻿<!-- I would prefer to use the <video> tag, but it doesn't support youtube videos-->
+<iframe type="text/html"
+        ng-src={{selectedVideoUrl}}
+        class="video"
+        height="385"
+        frameborder="0"></iframe>
+<div class="borderLightGray" id="videoDescription">
+    <a ng-href="{{selectedVideoUrl}}" target="_blank">
+        <p class="videoTitle">{{selectedVideo.snippet.title}}</p>
+    </a>
+    <p class="videoDescription">{{selectedVideo.snippet.description}}</p>
+</div>

@@ -1,0 +1,12 @@
+﻿<div class="row">
+    <div class="col-sm-8">
+        <a ng-click="selectVideo(videoItem); showModal('videoModal');">
+            <img class="previewVideosListItem" ng-src="{{videoItem.snippet.thumbnails.medium.url}}" />
+        </a>
+    </div>
+    <div class="col-sm-4">
+        <a ng-click="selectVideo(videoItem); showModal('videoModal');">
+            <p class="previewVideosListItem videoTitle">{{videoItem.snippet.title.substring(0, 25) + '...';}}</p>
+        </a>
+    </div>
+</div>

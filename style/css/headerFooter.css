@@ -1,0 +1,40 @@
+﻿.navbar-custom-color {
+    background-color: black;
+}
+
+.navbar a{
+    color: #fff !important;
+}
+
+.footer a{
+    color: #fff !important;
+}
+
+.navbar span{
+    background-color: #fff !important;
+}
+
+#footerText {
+    width: 20%;
+    margin: 0 auto !important;
+    text-align: center; 
+
+}
+
+#brandImgContainer {
+    height: 50px;
+}
+
+#brandImg {
+    vertical-align: middle;
+    margin-top:4px;
+    max-height: 90%; 
+    max-width: 90%;
+}
+
+@media screen and (max-width: 600px) {
+  #footerText{
+    visibility: hidden;
+    display: none;
+  }
+}
